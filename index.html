@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Class 12 - Resource Hub</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --accent: #f43f5e; /* Rose Color for English */
+            --accent-hover: #e11d48;
+            --youtube: #ef4444;
+            --drive: #10b981;
+            --whatsapp: #22c55e;
+            --badge-bg: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        header {
+            max-width: 1200px;
+            margin: 0 auto 3rem auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #fb7185, #f43f5e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Search Bar */
+        .search-wrapper {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #searchInput {
+            width: 100%;
+            padding: 16px 24px;
+            border-radius: 50px;
+            border: 2px solid var(--card-bg);
+            background-color: var(--card-bg);
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        #searchInput:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 25px rgba(244, 63, 94, 0.2);
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin: 4rem 0 1.5rem 0;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-count {
+            font-size: 0.85rem;
+            background: var(--badge-bg);
+            padding: 2px 10px;
+            border-radius: 12px;
+            color: var(--text-secondary);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Card Styling */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            background-color: #263346;
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .card-type-strip {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 4px;
+        }
+
+        .type-youtube .card-type-strip { background-color: var(--youtube); }
+        .type-drive .card-type-strip { background-color: var(--drive); }
+        .type-whatsapp .card-type-strip { background-color: var(--whatsapp); }
+
+        .card-content {
+            margin-bottom: 1rem;
+        }
+
+        .card-date {
+            font-size: 0.8rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            font-family: monospace;
+            background: rgba(244, 63, 94, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .card-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-teacher {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background-color: var(--badge-bg);
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .open-icon {
+            opacity: 0.7;
+            transition: opacity 0.2s;
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        .card:hover .open-icon { opacity: 1; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>English Resource Hub</h1>
+        <p class="subtitle">Class 12 NEB | U-ThinkCrazy</p>
+        <div class="search-wrapper">
+            <input type="text" id="searchInput" placeholder="Search topics (e.g., 'Grammar', 'Essay', 'Roshani Mam')...">
+        </div>
+    </header>
+
+    <div id="app" class="main-container"></div>
+
+    <script>
+        const data = [
+            {
+                section: "📖 Literature (Stories, Poems & Plays)",
+                type: "youtube",
+                items: [
+                    { title: "Sep 03 | Short Stories: Neighbours | Ms. Roshani", url: "https://youtu.be/kE8xDsTSJJ8" },
+                    { title: "Sep 04 | A Respectable Woman / A Devoted Son", url: "https://youtu.be/-1_0wZjrRyo" },
+                    { title: "Sep 05 | A Devoted Son (Detailed)", url: "https://youtu.be/B8qJf165m2w" },
+                    { title: "Sep 07 | The Treasure in the Forest", url: "https://youtu.be/HI2O91DEzZE" },
+                    { title: "Sep 08 | The Half Closed Eyes of the Buddha", url: "https://youtu.be/wHEyfCle_fo" },
+                    { title: "Sep 12 | A Very Old Man with Enormous Wings", url: "https://youtu.be/-U2ievm0dEQ" },
+                    { title: "Sep 13 | Poem: A Day | Ms. Roshani", url: "https://youtu.be/fwBBd0osrz0" },
+                    { title: "Sep 13 | Poem: Every Morning I Wake", url: "https://youtu.be/WXym2QrXFCc" },
+                    { title: "Sep 15 | Poem: I Was My Own Route", url: "https://youtu.be/hSVSyp06QBw" },
+                    { title: "Jan-02 | Stories Revision", url: "https://youtu.be/b474cnxi_P0?si=dwv1-yCmvNnwlKU6" },
+                    { title: "Jan-04 | Stories Revision II", url: "https://youtu.be/Nex9mg1s7lo?si=xX_f0hqLTY1nSu6R" },
+                    { title: "Jan-07 | A Devoted Son (Topper Batch)", url: "https://youtu.be/S3l68EJxC74?si=w4kS0Ue4DXNIGeqQ" },
+                    { title: "Jan-09 | Stories Overview", url: "https://youtu.be/xMtW6CvswGg?si=Xdy_gs2maRP6tKuR" },
+                    { title: "Jan-11 | Stories: My Old Home", url: "https://youtu.be/plmWYEsT-qk?si=dWwMegeMUyWAVDEa" },
+                    { title: "Jan-16 | Stories: Lecture 7", url: "https://youtu.be/JdaiU0lqa7k?si=FAIAmyCnmEMQmaUj" },
+                    { title: "Jan-18 | Stories & Poem 1", url: "https://youtu.be/LnjnOOHL88E?si=myo4SjQrhZV7X70V" },
+                    { title: "Jan-21 | Poem 2", url: "https://youtu.be/i2fQcGIKEZM?si=jRoGmUW1gdCdXgRf" },
+                    { title: "Jan-23 | Poem 3", url: "https://youtu.be/Y0iyljuR97M?si=qDi6utRJpO8LWnFu" },
+                    { title: "Jan-25 | Poem 4: The Awakening Age", url: "https://youtu.be/L__teI3iKs4?si=Q9Jjm301v_2M3hyI" },
+                    { title: "Jan-30 | Library Legacy | Oliver Sacks", url: "https://youtu.be/dWamFZGyK4U?si=VOVf8MUzzklHxarv" },
+                    { title: "Feb-11 | One Act Play: Chapter 1", url: "https://youtu.be/yOPC0HucD4Q?si=70iL81bUL2XRBYUF" },
+                    { title: "Feb-13 | One Act Play: Chapter 2", url: "https://youtu.be/EhOvVCuBP3E?si=hEHPzrEJBCmbXwXg" },
+                    { title: "Feb-15 | One Act Play: Chapter 3", url: "https://youtu.be/1kT9ww5SxMw?si=2Ob6ewhYJAO71ab-" }
+                ]
+            },
+            {
+                section: "✍️ Writing Skills (Essays, Letters, Reports)",
+                type: "youtube",
+                items: [
+                    { title: "Aug 12 | Interpreting Charts & Graphs 01", url: "https://youtu.be/Vt6GVbpg33Y" },
+                    { title: "Aug 13 | Interpreting Charts & Graphs 02", url: "https://youtu.be/KLqkOQNCnkc" },
+                    { title: "Aug 14 | Application Letter Guidelines", url: "https://youtu.be/in0w7PgKjb8" },
+                    { title: "Aug 15 | Personal Letter Writing", url: "https://youtu.be/nz4rb4o5GZU" },
+                    { title: "Aug 16 | Letter Writing General", url: "https://youtu.be/zSGdiSs3klE" },
+                    { title: "Aug 21 | Summary Writing", url: "https://youtu.be/SXy4NlSrjls" },
+                    { title: "Aug 27 | Skeleton Story & News Story", url: "https://youtu.be/iVmkWVHU0OE" },
+                    { title: "Aug 28 | Essay Writing & Travelogue", url: "https://youtu.be/5mCckL1vIFU" },
+                    { title: "Aug 31 | Travelogue, Press Release, Book/Film Review", url: "https://youtu.be/0VbqB-o4Mu8" },
+                    { title: "Sep 01 | Film/Story Review & Note Taking", url: "https://youtu.be/CjiJO2SyTeE" },
+                    { title: "Dec-21 | Letter Writing (Topper Batch)", url: "https://youtu.be/9jyx9pisiWM?si=PlL8TtKdjL7yD41p" },
+                    { title: "Dec-24 | Letter Writing Practice", url: "https://youtu.be/dG4FzVdXpbY?si=XrelGjqiyhwuJNJn" },
+                    { title: "Dec-28 | Book/Film Review, Diary & Press Release", url: "https://youtu.be/4qs-ET2---s?si=lvSwODcKJBnbQxUN" },
+                    { title: "Feb-01 | Essay Writing 02", url: "https://youtu.be/KCu73LymGEk?si=PPR0USj6XjFmJNJR" },
+                    { title: "Feb-01 | Essay Writing 03", url: "https://youtu.be/cnvZlwenfWo?si=5NoVuRg024Ax6qZm" },
+                    { title: "Feb-04 | Essay Writing 04", url: "https://youtu.be/nVGNDep7etg?si=HHoH3_-M_9rU0eWz" },
+                    { title: "Feb-06 | Essay Writing 02 (Revision)", url: "https://youtu.be/eNAdlxP8FDg?si=vRQzVGvQQqK8o9-g" },
+                    { title: "Feb-08 | Essay Writing Chapter 5", url: "https://youtu.be/kLUJ0l9EdC8?si=c_S4JEwEjoqGB2HH" },
+                    { title: "Mar-20 | Film Review | Mr. Lalit", url: "https://youtu.be/xJRknPxBdcI?si=-Xol-nbhiBG_r-60" },
+                    { title: "Mar-22 | Job Application Letter", url: "https://youtu.be/XmCCRFeHK9c?si=ZtPXhTZIALZduo-g" },
+                    { title: "Mar-25 | Job Application Letter 02", url: "https://youtu.be/Ry3IconX3Go?si=-A0NhvUZRn_p-2yE" },
+                    { title: "Mar-27 | Writing a Biography", url: "https://youtu.be/1TnPcpMBmaQ?si=8EKHbB1O5tWd0OJK" },
+                    { title: "Mar-29 | Paragraph Writing", url: "https://youtu.be/7_1BnCZqjXQ?si=ixMeQJFSuWw4of0w" },
+                    { title: "Apr-03 | CV Structure", url: "https://youtu.be/mZAbXvZ2Axk?si=NrnSl6LcFBeBgKJB" },
+                    { title: "Apr-05 | Writing Business Letters", url: "https://youtu.be/5LM6Qn1iJdY?si=uFxE0TLlA0fNX41_" },
+                    { title: "Apr-16 | Writing a Press Release", url: "https://youtu.be/UfjZeBWxCsE?si=ucQUsHZnOam0-fda" }
+                ]
+            },
+            {
+                section: "🗣️ Grammar & Vocabulary",
+                type: "youtube",
+                items: [
+                    { title: "Aug 10 | Parts of Speech Lec 02", url: "https://youtu.be/mj9V-S_lfZc" },
+                    { title: "Aug 11 | Parts of Speech Lec 03", url: "https://youtu.be/vlzbtGU6YKg" },
+                    { title: "Aug 17 | Modal Verbs", url: "https://youtu.be/H9-PDr-sOj4" },
+                    { title: "Aug 18 | Subject Verb Agreement", url: "https://youtu.be/i71yq2pl0lc" },
+                    { title: "Aug 19 | Relative Clause", url: "https://youtu.be/AmHyZ56Jfgo" },
+                    { title: "Aug 22 | Tenses", url: "https://youtu.be/8lDqg42Ok3Y" },
+                    { title: "Aug 23 | Voice & Speech", url: "https://youtu.be/5R5Dw1QJXf0" },
+                    { title: "Aug 24 | Voice & Speech 02", url: "https://youtu.be/rwk1Rc0vVJY" },
+                    { title: "Aug 25 | Speech / Infinitives & Gerunds", url: "https://youtu.be/Te4Fm7UnJpw" },
+                    { title: "Nov 13 | Grammar | Article | Mr. Om", url: "https://youtu.be/PJAbVk58eYM" },
+                    { title: "Nov 28 | Question Tag | Mr. Nagendra", url: "https://youtu.be/AI_x-SzeOgE" },
+                    { title: "Nov 29 | Singular and Plural Verb", url: "https://youtu.be/lenBpEVTLfg" },
+                    { title: "Dec-06 | Parts of Speech Revision", url: "https://youtu.be/cFSlEcVdAP0?si=252ZtbLBZEr1TiYo" },
+                    { title: "Dec-07 | Modal, Subject Verb, Question Tag", url: "https://youtu.be/IU4oenPFOVY?si=rXHrJKYw2VvZT24p" },
+                    { title: "Dec-08 | Tag Questions | Lec 10", url: "https://youtu.be/DLBb5WT1Txs?si=arCz-slmNRJ2qMdZ" },
+                    { title: "Dec-10 | Tag Questions | Lec 11", url: "https://youtu.be/XSZ9jL7Vnac?si=GMDSAXidJO62s-19" },
+                    { title: "Dec-14 | Grammar General", url: "https://youtu.be/Q4QE3cZfhM8?si=i44njaMc-dL00DrB" },
+                    { title: "Dec-19 | Grammar | Lecture 11", url: "https://youtu.be/8OprckqZsE8?si=vl1MANNsUwNgdD4V" },
+                    { title: "Jan-29 | Grammar & Vocabulary", url: "https://youtu.be/Ho91eOdVgF8?si=BjahX3ZuTHhWl6PD" },
+                    { title: "Feb-18 | Tag Questions | Mr. Lalit", url: "https://youtu.be/nBUIbOZs7pM?si=w_0BPibb-EZmTJeB" },
+                    { title: "Feb-20 | Tense | Mr. Lalit", url: "https://youtu.be/XjN8Xno3Oaw?si=vD_WRU3YgfPlfprM" },
+                    { title: "Feb-22 | Tense Practice", url: "https://youtu.be/soUed_vbf1s?si=cSH3MdMiqVaJsBa1" },
+                    { title: "Feb-27 | Active and Passive Voice", url: "https://youtu.be/irjPQWS1fuo?si=rpJdf9ugg-pQq7aC" },
+                    { title: "Mar-01 | Active & Passive Voice 02", url: "https://youtu.be/-XygtEVj-H0?si=UuATrD0BkNAghKnU" },
+                    { title: "Mar-04 | Grammar General", url: "https://youtu.be/WDWcXpSZh8U?si=qTUct9yxFQxSOLgZ" },
+                    { title: "Mar-06 | Direct and Indirect Speech", url: "https://youtu.be/u2L6n2iJWLc?si=wzCHRogeyjsOXZO9" },
+                    { title: "Mar-08 | Parts of Speech", url: "https://youtu.be/bLRyaLasgbw?si=ha_AfYkIhFwd3RDt" },
+                    { title: "Mar-11 | Relative Clauses", url: "https://youtu.be/UQgn8YJItzA?si=vDxqZZzNPuWVlRij" },
+                    { title: "Mar-15 | Prepositions", url: "https://youtu.be/RJqjjZ-vRos?si=MXwiUe-hh5HuRhl2" },
+                    { title: "Mar-18 | Sound Systems and Phonetics", url: "https://youtu.be/FjLgVxjLHx8?si=BHp9qAhm9MukytGf" }
+                ]
+            },
+            {
+                section: "📝 Model Questions & Exam Prep",
+                type: "youtube",
+                items: [
+                    { title: "Aug 06 | Question Discussion 01", url: "https://youtu.be/rNTOlIp_gsk" },
+                    { title: "Aug 07 | Question Discussion 02", url: "https://youtu.be/zyOp6uJWgmk" },
+                    { title: "Aug 08 | Question Discussion 03", url: "https://youtu.be/0p8XGlZXN-w" },
+                    { title: "Aug 10 | Question Discussion 04", url: "https://youtu.be/5Xev71-82QM" },
+                    { title: "Aug 11 | Question Discussion 05", url: "https://youtu.be/AMRmLDtZtlk" },
+                    { title: "Aug 23 | Re-Exam Discussion", url: "https://youtu.be/g3F8GkFIKDo" },
+                    { title: "Aug 23 | Re-Exam Discussion 2", url: "https://youtu.be/xjxTnYcmbGo" },
+                    { title: "Aug 24 | Re-Exam Discussion 3", url: "https://youtu.be/jOupRaJBtoQ" },
+                    { title: "Aug 25 | Re-Exam Discussion 4", url: "https://youtu.be/OwlwapzEdXE" },
+                    { title: "Aug 26 | Re-Exam Discussion 5", url: "https://youtu.be/nTndoea-1NY" },
+                    { title: "Aug 27 | Re-Exam Discussion 6", url: "https://youtu.be/sI0yyN3tKlo" },
+                    { title: "Aug 28 | Re-Exam Discussion 7", url: "https://youtu.be/nO9EB9ZE0fk" },
+                    { title: "Aug 29 | Re-Exam Discussion 8", url: "https://youtu.be/4pOTJy-wKA4" },
+                    { title: "Aug 29 | Re-Exam Discussion 9", url: "https://youtu.be/fSggS2Hw_sg" },
+                    { title: "Sep 04 | Re-Exam Discussion 10", url: "https://youtu.be/4wfb2c-NTeA" },
+                    { title: "Dec 05 | Number Sequence Puzzle", url: "https://youtu.be/jrUZiJZhMUo" },
+                    { title: "Apr 12 | Question Discussion", url: "https://youtu.be/9eb3vc8C4rA?si=-7Dv3nPoX_ZoYb5V" },
+                    { title: "Apr 26 | Model Question Set 1", url: "https://youtu.be/t9lLMeec3mY?si=eB4ZgZPtSwKATIvo" },
+                    { title: "Apr 26 | Model Question Set 2", url: "https://youtu.be/EmKiiaR8MTA?si=0_sqn72EzszcpsON" },
+                    { title: "Apr 27 | Model Question Set 3", url: "https://youtu.be/wyJwAEqLml8?si=g4wBc94sX0ywAt6Z" },
+                    { title: "Apr 28 | Model Question Set 4", url: "https://youtu.be/jHIcMOlsv00?si=auW6m5aGnI99r9sx" },
+                    { title: "Apr 29 | Model Question Set 5", url: "https://youtu.be/h3v3CgiXw9g?si=3_-9I-Mj6n9IhWq4" },
+                    { title: "May 01 | Model Question Set 6", url: "https://youtu.be/WVh58XkOgEk?si=dzdMlTFK4aYHqGpO" },
+                    { title: "May 02 | Model Question Set 7", url: "https://youtu.be/gcTMKHUodNw?si=X5lgh0vYTEKSX-pW" },
+                    { title: "May 03 | Model Question Set 8", url: "https://youtu.be/gw6TwxYsdmA?si=m1Sfx5nOr5ocBm2L" }
+                ]
+            },
+            {
+                section: "📁 Notes & Resources",
+                type: "drive",
+                items: [
+                    { title: "English Daily Notes", url: "https://drive.google.com/drive/folders/1l7RdwEfXBYdVwPWTbtBcirjBx7bg3_9v?usp=drive_link" },
+                    { title: "All Notes (Archive)", url: "https://drive.google.com/drive/folders/1S9IgzoXbPcJUlfv_AlQ8VLT6zQ9GszDd?usp=drive_link" },
+                    { title: "English Practice Set (PDF)", url: "https://drive.google.com/file/d/1UotqvIw7mJsFrhZxHFvS3KUSGWIw3WRx/view?usp=drive_link" },
+                    { title: "Previous English Class Notes", url: "https://drive.google.com/drive/folders/1yQVrLvmAohza1uQn8g7d1Z1xZerzD9wY" },
+                    { title: "English NG 2082 Notes", url: "https://drive.google.com/drive/folders/1gJt3RRkibDfn0fFIFSiIQNJuslOfxlv5?usp=drive_link" },
+                    { title: "Question Tag Rules (DOCX)", url: "https://files.wiseapp.live/upload_files/689dfd0331e29bf43b820496/upload_6452e95f-040a-4f78-a0d2-f83e67c9f987.docx" },
+                    { title: "Practice Question - Tag (DOCX)", url: "https://files.wiseapp.live/upload_files/689dfd0331e29bf43b820496/upload_a8fd9133-e143-40bc-9bb4-af0f1d8b54a4.docx" }
+                ]
+            },
+            {
+                section: "💬 Community",
+                type: "whatsapp",
+                items: [
+                    { title: "Join Whatsapp Group", url: "https://chat.whatsapp.com/H3A4V85YEJ0Fq6XBolbO1y" }
+                ]
+            }
+        ];
+
+        const app = document.getElementById('app');
+        const searchInput = document.getElementById('searchInput');
+
+        function getTypeStyle(type) {
+            if (type === 'youtube') return { class: 'type-youtube', label: 'YouTube 📺' };
+            if (type === 'drive') return { class: 'type-drive', label: 'Drive 📂' };
+            if (type === 'whatsapp') return { class: 'type-whatsapp', label: 'WhatsApp 💬' };
+            return { class: '', label: 'Link 🔗' };
+        }
+
+        function extractDate(title) {
+            const match = title.match(/([A-Za-z]{3})[\s-]?(\d{1,2})/);
+            if (match) return `${match[1]} ${match[2]}`;
+            return null;
+        }
+
+        function render(filter = "") {
+            app.innerHTML = "";
+            const lowerFilter = filter.toLowerCase();
+
+            data.forEach(section => {
+                const filteredItems = section.items.filter(item => 
+                    item.title.toLowerCase().includes(lowerFilter) || 
+                    section.section.toLowerCase().includes(lowerFilter)
+                );
+
+                if (filteredItems.length > 0) {
+                    const sectionHeader = document.createElement('div');
+                    sectionHeader.className = 'section-header';
+                    sectionHeader.innerHTML = `
+                        <div class="section-title">
+                            ${section.section}
+                            <span class="section-count">${filteredItems.length}</span>
+                        </div>
+                    `;
+                    app.appendChild(sectionHeader);
+
+                    const grid = document.createElement('div');
+                    grid.className = 'grid';
+
+                    filteredItems.forEach(item => {
+                        const styleInfo = getTypeStyle(section.type);
+                        const date = extractDate(item.title);
+                        let cleanTitle = item.title;
+
+                        const card = document.createElement('a');
+                        card.href = item.url;
+                        card.target = "_blank";
+                        card.className = `card ${styleInfo.class}`;
+                        
+                        card.innerHTML = `
+                            <div class="card-type-strip"></div>
+                            <div class="card-content">
+                                ${date ? `<div class="card-date">${date}</div>` : ''}
+                                <div class="card-title">${cleanTitle}</div>
+                            </div>
+                            <div class="card-footer">
+                                <span class="badge">${styleInfo.label}</span>
+                                <span class="open-icon">Open ↗</span>
+                            </div>
+                        `;
+                        grid.appendChild(card);
+                    });
+
+                    app.appendChild(grid);
+                }
+            });
+
+            if (app.innerHTML === "") {
+                app.innerHTML = `<div style="text-align:center; padding: 4rem; color: #94a3b8;">
+                    <p style="font-size:1.2rem">No resources found for "${filter}"</p>
+                    <p style="font-size:0.9rem; margin-top:0.5rem">Try searching for 'Grammar', 'Stories', or 'Letters'.</p>
+                </div>`;
+            }
+        }
+
+        render();
+
+        searchInput.addEventListener('input', (e) => {
+            render(e.target.value);
+        });
+
+    </script>
+</body>
+</html>
